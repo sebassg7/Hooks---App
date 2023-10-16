@@ -21,7 +21,16 @@ const onInputChange = ({target}) => {
 
 useEffect(( ) => {
     console.log('useEffect called!!');
-})
+}, []);
+
+useEffect(( ) => {
+    console.log('formState Change');
+}, [formState]);
+
+useEffect(( ) => {
+    console.log('email changed!!');
+}, [email]);
+
 
   return (
     <>
