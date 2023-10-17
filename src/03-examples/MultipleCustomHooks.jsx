@@ -1,15 +1,14 @@
+import { useCounter } from "../hooks/useCounter";
 import { useFetch } from "../hooks/useFetch";
 
-export const MultipleCustomHooks = () => {
 
-    const {data,isLoading,hasError} = useFetch('https://api.breakingbadquotes.xyz/v1/quotes');
+export const MultipleCustomHooks = () => {
+const {counter, increment} = useCounter();
+    const {data,isLoading,hasError} = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/${counter}`);
     
     // const{author, quote} = false; "El valor de author y quote son undefined";
     console.log(!!data);
     const {author, quote} = !!data && data[0];
-    
-    
-      
 
   return (
     <>
@@ -31,7 +30,10 @@ export const MultipleCustomHooks = () => {
                 )
         } 
 
-        <button className="btn btn-primary">
+        <button 
+        onClick={() => increment()} 
+        disabled ={isLoading}
+        className="btn btn-primary">
             Nexy quote
         </button>
         
