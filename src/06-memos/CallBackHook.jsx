@@ -8,16 +8,16 @@ export const CallBackHook = () => {
     const [counter, setCounter] = useState(10);
 
     const increment = useCallback(
-      () => {
-        console.log('setCounter(counter => counter + 1)');
-        setCounter(counter => counter + 1);
+      (value) => {
+        
+        setCounter(counter => counter + value);
       },
       [],
     );
 
-    useEffect(() => {
-        increment();
-    }, [increment]);
+    // useEffect(() => {
+    //     increment();
+    // }, [increment]);
     
 
 
