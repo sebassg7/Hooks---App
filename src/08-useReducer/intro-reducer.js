@@ -28,11 +28,5 @@ const addTodoAction = {
 
 todos = todoReducer(todos, addTodoAction);
 
-// todos.push({
-//     id:2,
-//     todo: 'Recolectar la piedra del poder',
-//     done: false,
-// });
-
 console.log({state:todos});
 
