@@ -1,19 +1,11 @@
 import { useEffect, useReducer, useState } from "react";
 import { todoReducer } from "./todoReducer";
-import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
+import { TodoList } from "./Todolist";
+
 
 const initialState = [
-    // {
-    //     id: new Date().getTime(),
-    //     description: 'Recolectar la piedra del alma',
-    //     done: false,
-    // },
-    // {
-    //     id: new Date().getTime() *3,
-    //     description: 'Recolectar la piedra del tiempo',
-    //     done: false,
-    // }
+
 ];
 
 const init = () => {
@@ -38,6 +30,16 @@ const  handelNewTodo = (todo) => {
     dispatch( action );
 };
 
+const handleRemoveTodo = (id) => {
+    
+    // console.log({id});
+
+    dispatch({
+        type: '[TODO] Remove Todo',
+        payload: id,
+    })
+};
+
   return (
     <>
         <h1>TodoApp: 10 <small>pendientes: 2</small></h1>
@@ -45,7 +47,7 @@ const  handelNewTodo = (todo) => {
 
         <div className="row">
             <div className="col-7">
-                <TodoList todos={todos}/>
+                <TodoList todos={todos} onDeleteTodo={handleRemoveTodo}/>
             </div>
         
 
