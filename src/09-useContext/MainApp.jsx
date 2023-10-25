@@ -2,6 +2,8 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "./HomePage";
 import { LoginPage } from "./LoginPage";
 import { AboutPage } from "./AboutPage";
+import { NavBar } from "./NavBar";
+
 // import { HomePage, AboutPage, LoginPage } from "./index";
 
 
@@ -9,7 +11,7 @@ import { AboutPage } from "./AboutPage";
 export const MainApp = () => {
   return (
     <>
-        <h1>MainApp</h1>
+        <NavBar/>
         <hr />
 
         <Routes>
