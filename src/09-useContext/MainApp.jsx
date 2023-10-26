@@ -7,8 +7,6 @@ import { UserProvider } from "./context/UserProvider";
 
 // import { HomePage, AboutPage, LoginPage } from "./index";
 
-
-
 export const MainApp = () => {
   return (
     <UserProvider>
@@ -30,4 +28,4 @@ export const MainApp = () => {
        
     </UserProvider>
   )
-}
+};
