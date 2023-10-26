@@ -3,6 +3,7 @@ import { HomePage } from "./HomePage";
 import { LoginPage } from "./LoginPage";
 import { AboutPage } from "./AboutPage";
 import { NavBar } from "./NavBar";
+import { UserProvider } from "./context/UserProvider";
 
 // import { HomePage, AboutPage, LoginPage } from "./index";
 
@@ -10,7 +11,7 @@ import { NavBar } from "./NavBar";
 
 export const MainApp = () => {
   return (
-    <>
+    <UserProvider>
         <NavBar/>
         <hr />
 
@@ -27,6 +28,6 @@ export const MainApp = () => {
 
         </Routes>
        
-    </>
+    </UserProvider>
   )
 }
