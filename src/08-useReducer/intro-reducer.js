@@ -6,7 +6,7 @@ const initialState = [{
 
 const todoReducer = (state = initialState, action ={}) => {
 
-    if(action.tpye ='[TODO] add todo'){
+    if(action.tpye ==='[TODO] add todo'){
         return[...state, action.playload]
     }
 
